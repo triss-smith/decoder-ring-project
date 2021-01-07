@@ -2,28 +2,37 @@ function caesar(input, shift, encode = true) {
     if(shift === 0 || shift < -25 || shift > 25) {
         return false;
     }
-    input = input.toLowerCase()
+    input = input.toLowerCase();
     
 
     let characterIndex = 0;
     let finalString = "";
     for(let i = 0; i < input.length; i++) {
-        let inputCode;
-        if((input.charCodeAt(i) === 96 && shift < 0))
-            {inputCode = 122;
-            shift += 1}
+        let inputCode = input.charCodeAt(i);
+        characterIndex = inputCode + shift;
 
-        if(input[i] === " ") {finalString += " "} 
+        if((inputCode < 65  || inputCode > 122)
+         ||
+        (inputCode > 90 && inputCode < 97)) {            
+            finalString += input[i]} 
         
         else {
-            
-            
-        characterIndex = inputCode + shift;
-        finalString += String.fromCharCode(characterIndex);
+             if(input[i] === "a" && shift < 0) {
+                 inputCode = 123;
+                }
+            if(input[i] === "z" && shift > 0) {
+                inputCode = 97;
+            }
+             inputCode += shift;
+             finalString += String.fromCharCode(inputCode)
         }
     }
     console.log(finalString);
     return finalString;
-}
+    }
+
+    
+
+
 
 module.exports = caesar;
