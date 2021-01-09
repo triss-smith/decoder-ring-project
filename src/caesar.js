@@ -17,17 +17,22 @@ function caesar(input, shift, encode = true) {
             finalString += input[i]} 
         
         else {
-             if(input[i] === "a" && shift < 0) {
-                 inputCode = 123;
-                }
-            if(input[i] === "z" && shift > 0) {
-                inputCode = 97;
+             
+            if((inputCode + shift) <= 96) {
+                
+                let wrapAround = 97 - (inputCode + shift);
+                inputCode = 123 - wrapAround;
             }
-             inputCode += shift;
+            else if((inputCode + shift) >= 123) {
+                let wrapAround = 123 - (inputCode + shift);
+                inputCode = 97 - wrapAround;
+            }
+            
+            else {inputCode += shift;}
+             
              finalString += String.fromCharCode(inputCode)
         }
     }
-    console.log(finalString);
     return finalString;
     }
 

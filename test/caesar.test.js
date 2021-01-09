@@ -23,8 +23,29 @@ describe("caesar", () => {
 })
 describe("caesar", () => {
     it("should ignore case of input", () => {
-        let expected = "knvdq bzrd";
-        let actual = caesar("Lower case",-1)
+        let expected = "cheud";
+        let actual = caesar("ZebRa",3)
+        expect(actual).to.eql(expected);
+    })
+})
+describe("caesar", () => {
+    it("should handle shifts that go past the end ot the alphabet", () => {
+        let expected = "cheud";
+        let actual = caesar("zebra",3);
+        expect(actual).to.eql(expected);
+    })
+})
+describe("caesar", () => {
+    it("should handle shifts that go past the end of the alphabet", () => {
+        let expected = "xxoasxoh";
+        let actual = caesar("aardvark",-3);
+        expect(actual).to.eql(expected);
+    })
+})
+describe("caesar", () => {
+    it("should maintain spaces and nonalphabetic symbols in the message", () => {
+        let expected = "yxiaro'p dxqb";
+        let actual = caesar("Baldur's Gate", -3);
         expect(actual).to.eql(expected);
     })
 })
