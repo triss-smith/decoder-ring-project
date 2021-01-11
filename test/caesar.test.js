@@ -1,4 +1,4 @@
-const expect = require("chai").expect;
+const {expect} = require("chai");
 const caesar = require("../src/caesar");
 
 describe("caesar", () => {
