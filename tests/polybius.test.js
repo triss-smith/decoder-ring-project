@@ -1,4 +1,4 @@
-const {expect} = require("chai");
+const expect = require("chai").expect;
 const polybius = require("../src/polybius");
 
 describe("polybius", () => {
@@ -13,5 +13,12 @@ describe("polybius", () => {
         expected = "4242";
         actual = polybius("ij");
         expect(actual).to.equal(expected);
+    })
+})
+describe("polybius", () => {
+    it("should, when decoding, translate 42 to 'i/j'", () => {
+        expected = "i/ji/jm lahey"
+        actual = polybius("424223 1311325145",false)
+        expect(actual).to.eql(expected);
     })
 })
