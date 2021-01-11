@@ -37,6 +37,7 @@ function polybius(input, encode = true) {
             }
         }
     }
+    console.log(finalString);
     return finalString;
 }
 
