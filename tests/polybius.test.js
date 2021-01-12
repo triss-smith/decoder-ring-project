@@ -22,3 +22,17 @@ describe("polybius", () => {
         expect(actual).to.eql(expected);
     })
 })
+describe("polybius", () => {
+    it("should maintain spaces before and after encoding or decoding", () => {
+        expected = "42 42 42";
+        actual = polybius("i j i");
+        expect(actual).to.eql(expected);
+    })
+})
+describe("polybius", () => {
+    it("should maintain spaces before and after encoding or decoding", () => {
+        expected = "a a a";
+        actual = polybius("11 11 11",false);
+        expect(actual).to.eql(expected);
+    })
+})
