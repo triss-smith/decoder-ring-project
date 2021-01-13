@@ -49,3 +49,17 @@ describe("caesar", () => {
         expect(actual).to.eql(expected);
     })
 })
+describe("caesar", () => {
+    it("should decode a message given false as a third argument", () => {
+        let expected = "baldur's gate";
+        let actual = caesar("Yxiaro'p Dxqb", -3,false);
+        expect(actual).to.eql(expected);
+
+    })
+})
+describe("caesar", () => {
+    it("should return false if no shift value is present", () => {
+        actual = caesar("messsage");
+        expect(actual).to.be.false;
+    })
+})

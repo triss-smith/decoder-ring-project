@@ -1,5 +1,5 @@
 function substitution(input, alphabet, encode = true) {
-    let classicAlphabet = "abcdefghijklmnopqrstuvwxyz";
+    const classicAlphabet = "abcdefghijklmnopqrstuvwxyz";
     let loweredInput = input.toLowerCase();
     let loweredAlphabet = alphabet;
     let finalString = "";

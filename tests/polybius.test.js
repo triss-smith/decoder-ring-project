@@ -17,7 +17,7 @@ describe("polybius", () => {
 })
 describe("polybius", () => {
     it("should, when decoding, translate 42 to 'i/j'", () => {
-        expected = "i/ji/jm lahey"
+        expected = "(i/j)(i/j)m lahey"
         actual = polybius("424223 1311325145",false)
         expect(actual).to.eql(expected);
     })

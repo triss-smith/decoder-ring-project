@@ -1,6 +1,9 @@
 function caesar(input, shift, encode = true) {
-    if(shift === 0 || shift < -25 || shift > 25) {
+    if(shift === 0 || shift < -25 || shift > 25 || shift == undefined) {
         return false;
+    }
+    if(encode == false) {
+        shift = -shift;
     }
     input = input.toLowerCase();
     
