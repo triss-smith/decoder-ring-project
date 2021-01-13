@@ -1,7 +1,7 @@
 function substitution(input, alphabet, encode = true) {
     const classicAlphabet = "abcdefghijklmnopqrstuvwxyz";
-    let loweredInput = input.toLowerCase();
-    let loweredAlphabet = alphabet;
+    const loweredInput = input.toLowerCase();
+    const loweredAlphabet = alphabet;
     let finalString = "";
     //checks the length of the alphabet to ensure length is exactly 26.
     if(alphabet.length > 26 || alphabet.length < 26) {
@@ -47,7 +47,6 @@ function substitution(input, alphabet, encode = true) {
     }
 
 }
-console.log(finalString);
 return finalString
 }
 
